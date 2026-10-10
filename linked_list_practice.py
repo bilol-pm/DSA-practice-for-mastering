@@ -91,6 +91,15 @@ class LinkedList:
 
         return current
 
+    def set_value(self, index, value):
+        temp = self.get(index)
+
+        if temp:
+            temp.value = value
+            return True
+
+        return False
+
 my_list = LinkedList()
 my_list.append(1)
 my_list.append(2)
@@ -114,3 +123,11 @@ if node:
     print("Found element: ", node.value)
 else:
     print("Element not found")
+
+print("Before Change: ")
+my_list.print_list()
+
+my_list.set_value(5, 85)
+
+print("After change: ")
+my_list.print_list()
