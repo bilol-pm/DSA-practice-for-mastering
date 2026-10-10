@@ -72,11 +72,30 @@ class LinkedList:
             print(current.value, end=" -> ")
             current = current.next
         print("None")
+
+    def get_length(self):
+        count = 0
+        current = self.head
+        while current:
+            count += 1
+            current = current.next
+        return count
+
+
 my_list = LinkedList()
 my_list.append(1)
 my_list.append(2)
 my_list.append(3)
 my_list.prepend(4)
+my_list.prepend(5)
+my_list.prepend(6)
+my_list.prepend(7)
+my_list.prepend(8)
+my_list.prepend(9)
+my_list.prepend(10)
 
 print("My LinkedList: ")
 my_list.print_list()
+
+length = my_list.get_length()
+print(length)
