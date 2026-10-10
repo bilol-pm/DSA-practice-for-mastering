@@ -81,6 +81,15 @@ class LinkedList:
             current = current.next
         return count
 
+    def get(self, index):
+        current = self.head
+
+        for _ in range(index):
+            if current is None:
+                return None
+            current = current.next
+
+        return current
 
 my_list = LinkedList()
 my_list.append(1)
@@ -99,3 +108,9 @@ my_list.print_list()
 
 length = my_list.get_length()
 print(length)
+
+node = my_list.get(2)
+if node:
+    print("Found element: ", node.value)
+else:
+    print("Element not found")
