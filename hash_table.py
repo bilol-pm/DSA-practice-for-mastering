@@ -1,4 +1,4 @@
-my_list = [None] * 10
+my_list = [[] for _ in range(10)]
 print(my_list)
 
 def hash_function(value):
@@ -10,9 +10,20 @@ def hash_function(value):
 
 def add(name):
     index = hash_function(name)
-    my_list[index] = name
+    my_list[index].append(name)
+
+def get(name):
+    index = hash_function(name)
+    if name in my_list[index]:
+        return f"{name} is found in (index: {index})"
+    return "not found"
+
 
 add("Bob")
 add("Alice")
 add("John")
-print(my_list)
+add("Bob")
+
+print("Whole hash table: ", my_list)
+print(get("Bob"))
+print(get("Alice"))
